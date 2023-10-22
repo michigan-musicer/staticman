@@ -1,0 +1,24 @@
+comments:
+  allowedFields: ["name", "email", "message"]
+  allowedOrigins: ["localhost", "thecourtmusician.com"]
+  auth:
+    required: false
+  branch: "master"
+  # Is there a way to insert the name of the commenter here?
+  # so that it's "Add staticman comment from <>"
+  commitMessage: "Add Staticman comment from {name}" 
+  filename: "entry{@timestamp}"
+  format: "yaml"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "timestamp-seconds"
+
+  moderation: false
+  name: "thecourtmusician.com"
+  path "_data/comments/{options.slug}"
+  requiredFields: ["name", "email", "message"]
+  transforms:
+    email: md5
+    name: md5
